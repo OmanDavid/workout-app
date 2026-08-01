@@ -15,22 +15,26 @@ Data is validated at three levels: database table constraints, model-level valid
 ## Installation
 
 1. Clone the repository and move into the project folder.
-2. Install dependencies:
+2. Create and activate a virtual environment:
    ```
-   pipenv install
-   pipenv shell
+   python3 -m venv venv
+   source venv/bin/activate # on Windows: venv\Scripts\activate
    ```
-3. Move into the `server/` directory:
+3. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+4. Move into the `server/` directory:
    ```
    cd server
    ```
-4. Initialize and apply the database migrations:
+5. Initialize and apply the database migrations:
    ```
    flask db init
    flask db migrate -m "initial migration"
    flask db upgrade head
    ```
-5. Seed the database with example data:
+6. Seed the database with example data:
    ```
    python seed.py
    ```
